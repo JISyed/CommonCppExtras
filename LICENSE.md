@@ -1,5 +1,7 @@
 MIT License
 
+**NOTE: The [Catch unit test framework](https://github.com/philsquared/Catch) is not appliciable to this license. See it's [license](https://github.com/philsquared/Catch/blob/master/LICENSE.txt) for more information.**
+
 Copyright (c) 2017 Jibran Syed
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

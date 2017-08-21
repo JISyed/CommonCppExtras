@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="FileIO System">
+      <UniqueIdentifier>{8ba0ce63-850b-4d90-aef4-86f14226f5c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logger System">
+      <UniqueIdentifier>{4c8621b5-0e85-45ae-89fc-c8e29e39baf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FixedStrings">
+      <UniqueIdentifier>{f6ec1311-2d89-4dfd-b4a8-0571eceac7b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SmartPointers System">
+      <UniqueIdentifier>{5a3a7ee6-78f1-4572-b3d1-05a7c0cfd1cc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="catch.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main_tests.cpp" />
+  </ItemGroup>
+</Project>
