@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{806f58cd-eca3-459a-ba62-182517cf597f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{08f23747-6ac6-4ba0-9f86-b9a468565875}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests\__TestBase">
+      <UniqueIdentifier>{ea202489-bc4f-44d6-bfd2-7d77a5a1e3d0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FileTest.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Tests\__TestBase</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\CCE\FileIOSys\File.hpp">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CCE\FileIOSys\File.inl">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\catch.hpp">
+      <Filter>Tests\__TestBase</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
