@@ -15,5 +15,19 @@
     <ClInclude Include="..\catch.hpp">
       <Filter>Tests\__TestBase</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\CCE\SmartPointersSys\WeakPtr.hpp">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CCE\SmartPointersSys\WeakPtr.inl">
+      <Filter>Source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Tests\__TestBase</Filter>
+    </ClCompile>
+    <ClCompile Include="WeakPtrTest.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

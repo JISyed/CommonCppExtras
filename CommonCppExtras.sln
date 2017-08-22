@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FixedStringSys_Test", "Test
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmartPointerSys_Test", "Tests\SmartPointerSys_Test\SmartPointerSys_Test.vcxproj", "{9727A5E4-6657-411B-B440-078B523992DD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathUtilSys_Test", "Tests\MathUtilSys_Test\MathUtilSys_Test.vcxproj", "{BE4E8F5A-A029-46DA-A7EA-46DEB0A8C29E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,6 +35,10 @@ Global
 		{9727A5E4-6657-411B-B440-078B523992DD}.Debug|Win32.Build.0 = Debug|Win32
 		{9727A5E4-6657-411B-B440-078B523992DD}.Release|Win32.ActiveCfg = Release|Win32
 		{9727A5E4-6657-411B-B440-078B523992DD}.Release|Win32.Build.0 = Release|Win32
+		{BE4E8F5A-A029-46DA-A7EA-46DEB0A8C29E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BE4E8F5A-A029-46DA-A7EA-46DEB0A8C29E}.Debug|Win32.Build.0 = Debug|Win32
+		{BE4E8F5A-A029-46DA-A7EA-46DEB0A8C29E}.Release|Win32.ActiveCfg = Release|Win32
+		{BE4E8F5A-A029-46DA-A7EA-46DEB0A8C29E}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

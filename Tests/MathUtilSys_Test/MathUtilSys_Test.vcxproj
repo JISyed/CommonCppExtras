@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9727A5E4-6657-411B-B440-078B523992DD}</ProjectGuid>
-    <RootNamespace>SmartPointerSys_Test</RootNamespace>
+    <ProjectGuid>{BE4E8F5A-A029-46DA-A7EA-46DEB0A8C29E}</ProjectGuid>
+    <RootNamespace>MathUtilSys_Test</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -38,14 +38,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)$(Configuration)\Intermediates\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)$(Configuration)\Intermediates\</IntDir>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
@@ -75,15 +68,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\CCE\SmartPointersSys\WeakPtr.hpp" />
+    <ClInclude Include="..\..\CCE\MathUtilSys\Consts.hpp" />
     <ClInclude Include="..\catch.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConstsTest.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="WeakPtrTest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\CCE\SmartPointersSys\WeakPtr.inl">
+    <ClInclude Include="..\..\CCE\MathUtilSys\Consts.inl">
       <FileType>Document</FileType>
     </ClInclude>
   </ItemGroup>

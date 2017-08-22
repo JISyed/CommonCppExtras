@@ -2,23 +2,23 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source">
-      <UniqueIdentifier>{be5221aa-f2c4-4a22-aaaf-4cae10956a37}</UniqueIdentifier>
+      <UniqueIdentifier>{fb969b63-150b-40ca-b57e-3d86d1504097}</UniqueIdentifier>
     </Filter>
     <Filter Include="Tests">
-      <UniqueIdentifier>{9c1c7481-9f50-4d1f-ba55-ec3f17b7fdbf}</UniqueIdentifier>
+      <UniqueIdentifier>{e3f645f6-868c-4a46-ab20-09d92b7bec86}</UniqueIdentifier>
     </Filter>
     <Filter Include="Tests\__TestBase">
-      <UniqueIdentifier>{1bd7e308-78b4-433e-a082-21f27533f4e9}</UniqueIdentifier>
+      <UniqueIdentifier>{a4b82e34-18be-461a-9634-2196164aef2f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\catch.hpp">
       <Filter>Tests\__TestBase</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\CCE\FixedStringSys\FixedString8.inl">
+    <ClInclude Include="..\..\CCE\MathUtilSys\Consts.hpp">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\CCE\FixedStringSys\FixedString8.hpp">
+    <ClInclude Include="..\..\CCE\MathUtilSys\Consts.inl">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -26,7 +26,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Tests\__TestBase</Filter>
     </ClCompile>
-    <ClCompile Include="FixedString8Test.cpp">
+    <ClCompile Include="ConstsTest.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>
