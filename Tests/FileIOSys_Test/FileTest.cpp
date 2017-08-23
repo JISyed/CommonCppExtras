@@ -3,10 +3,10 @@
 
 TEST_CASE("Initilizing the File object", "[File]")
 {
-	{
-		cce::File file;
-		REQUIRE(file.testValue == 50);
-		file.testValue = 1240;
-		REQUIRE(file.testValue == 1240);
-	}
+	cce::File file("RandomNonsense.bin", 
+					cce::File::Mode::Read, 
+					cce::File::Type::Binary, 
+					cce::File::Options::EndOfFile,
+					true
+	);
 }

@@ -1,17 +1,47 @@
 #ifndef CCE_FILE_HEADER
 #define CCE_FILE_HEADER
 
+#include <cstdio>
+
 namespace cce
 {
 	class File
 	{
 	public:
-		File();
+
+		enum class Mode
+		{
+			Read,
+			Write,
+			ReadAndWrite
+		};
+
+		enum class Type
+		{
+			Text,
+			Binary
+		};
+
+		enum class Options
+		{
+			StartOfFile,
+			EndOfFile,
+			ClearFile
+		};
+
+		File(const char* const fileName, const Mode openMode, const Type fileType, const Options fileOptions, const bool fileMustExist = false);
 		~File();
 
-	public:	// was private
+	private:
 
-		int testValue;
+		FILE* handle;
+
+
+		File() = delete;
+		File(const File&) = delete;
+		File& operator=(const File&) = delete;
+		File(File&&) = delete;
+		File& operator=(File&&) = delete;
 
 	};
 }
