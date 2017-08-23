@@ -6,7 +6,11 @@ namespace cce
 					  const Mode openMode, 
 					  const Type fileType, 
 					  const Options fileOptions, 
-					  const bool fileMustExist)
+					  const bool fileMustExist): 
+					  handle(),
+					  fileSize(0),
+					  openMode(openMode),
+					  fileType(fileType)
 	{
 		assert(filename != nullptr);	// Null string!
 		assert(filename[0] != '\0');	// Empty string!
@@ -14,7 +18,6 @@ namespace cce
 		// Check if the file exists
 		if (fileMustExist)
 		{
-			this->handle = 0;
 			fopen_s(&handle, filename, "r");
 			assert(this->handle != 0);	// File doesn't exist when it must
 			if (this->handle == 0)
@@ -25,6 +28,29 @@ namespace cce
 
 			fclose(handle);
 			this->handle = 0;
+		}
+		else
+		{
+			// If the file doesn't have to exist,
+			// make sure that read mode can still open it
+			if (this->openMode == Mode::Read)
+			{
+				fopen_s(&handle, filename, "r");
+				// If file does not exist...
+				if (this->handle == 0)
+				{
+					//... make a new one
+					fopen_s(&handle, filename, "w");
+					assert(this->handle != 0);	// File creation error!
+					if (this->handle == 0)
+					{
+						perror("File creation error");
+						// Exit execution here on error
+					}
+				}
+				fclose(handle);
+				this->handle = 0;
+			}
 		}
 
 		const char* cmodes[12];
@@ -96,6 +122,7 @@ namespace cce
 		}
 		
 
+
 		// Actually open the file
 		fopen_s(&handle, filename, currMode);
 		assert(this->handle != 0);	// Error opening the file!
@@ -105,7 +132,9 @@ namespace cce
 			// Exit execution here on error!
 		}
 
-		// Operate file differently depending on Options
+
+
+		// Operate files differently depending on Options
 		if (fileOptions == Options::StartOfFile)
 		{
 			// Seek to beginning of file
@@ -138,6 +167,16 @@ namespace cce
 				// Exit execution here on error!
 			}
 
+			this->fileSize = 0;
+			{
+				// TODO: Remove this code later
+				int sc = fseek(handle, 0, SEEK_END);
+				assert(sc == 0);	// Seek error!
+				sc = ftell(handle);
+				assert(sc != EOF);	// Tell error!
+
+				assert(this->fileSize == sc);
+			}
 		}
 		else
 		{
@@ -147,6 +186,24 @@ namespace cce
 
 	inline File::~File()
 	{
-		
+		// Close file on destruction
+		fclose(this->handle);
 	}
+
+
+	inline const File::Mode File::GetOpenMode() const
+	{
+		return this->openMode;
+	}
+
+	inline const File::Type File::GetFileType() const
+	{
+		return this->fileType;
+	}
+
+	inline const long File::GetFileSize() const
+	{
+		return this->fileSize;
+	}
+
 }

@@ -32,10 +32,16 @@ namespace cce
 		File(const char* const fileName, const Mode openMode, const Type fileType, const Options fileOptions, const bool fileMustExist = false);
 		~File();
 
+		const Mode GetOpenMode() const;
+		const Type GetFileType() const;
+		const long GetFileSize() const;
+
 	private:
 
 		FILE* handle;
-
+		long fileSize;
+		const Mode openMode;
+		const Type fileType;
 
 		File() = delete;
 		File(const File&) = delete;

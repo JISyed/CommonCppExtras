@@ -7,6 +7,6 @@ TEST_CASE("Initilizing the File object", "[File]")
 					cce::File::Mode::Read, 
 					cce::File::Type::Binary, 
 					cce::File::Options::EndOfFile,
-					true
+					false
 	);
 }
