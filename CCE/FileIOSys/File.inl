@@ -1,4 +1,5 @@
 #include <cassert>
+#define CCE_INVALID_FILE_ENUM -234513
 
 namespace cce
 {
@@ -83,7 +84,8 @@ namespace cce
 			}
 			else
 			{
-				assert((int)fileType == -234513); // Invalid Type
+				// Invalid Type
+				assert((int)fileType == CCE_INVALID_FILE_ENUM);
 			}
 		}
 		else if (openMode == Mode::Write)
@@ -98,7 +100,8 @@ namespace cce
 			}
 			else
 			{
-				assert((int)fileType == -234513); // Invalid Type
+				// Invalid Type
+				assert((int)fileType == CCE_INVALID_FILE_ENUM);
 			}
 		}
 		else if (openMode == Mode::ReadAndWrite)
@@ -113,12 +116,14 @@ namespace cce
 			}
 			else
 			{
-				assert((int)fileType == -234513); // Invalid Type
+				// Invalid Type
+				assert((int)fileType == CCE_INVALID_FILE_ENUM);
 			}
 		}
 		else
 		{
-			assert((int) openMode == -234513);	// Invalid Mode
+			// Invalid Mode
+			assert((int)openMode == CCE_INVALID_FILE_ENUM);
 		}
 		
 
@@ -137,8 +142,14 @@ namespace cce
 		// Operate files differently depending on Options
 		if (fileOptions == Options::StartOfFile)
 		{
+			// Get file size
+			int sc = fseek(handle, 0, SEEK_END);
+			assert(sc == 0);	// Seek error!
+			this->fileSize = ftell(this->handle);
+			assert(this->fileSize != EOF);	// Tell error!
+
 			// Seek to beginning of file
-			int sc = fseek(handle, 0, SEEK_SET);
+			sc = fseek(handle, 0, SEEK_SET);
 			assert(sc == 0);	// Seek error!
 		}
 		else if (fileOptions == Options::EndOfFile)
@@ -146,6 +157,10 @@ namespace cce
 			// Seek to end of file
 			int sc = fseek(handle, 0, SEEK_END);
 			assert(sc == 0);	// Seek error!
+
+			// Get filesize
+			this->fileSize = ftell(this->handle);
+			assert(this->fileSize != EOF);	// Tell error!
 		}
 		else if (fileOptions == Options::ClearFile)
 		{
@@ -168,19 +183,11 @@ namespace cce
 			}
 
 			this->fileSize = 0;
-			{
-				// TODO: Remove this code later
-				int sc = fseek(handle, 0, SEEK_END);
-				assert(sc == 0);	// Seek error!
-				sc = ftell(handle);
-				assert(sc != EOF);	// Tell error!
-
-				assert(this->fileSize == sc);
-			}
 		}
 		else
 		{
-			assert((int)fileOptions == -234513); // Invalid Option
+			// Invalid Option
+			assert((int)fileOptions == CCE_INVALID_FILE_ENUM);
 		}
 	}
 
